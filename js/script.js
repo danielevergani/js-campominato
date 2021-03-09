@@ -1,7 +1,7 @@
 function verifica (lista, tipoIns){
 
     var numero;
-    var validazione; 
+    var validazione;
 
     do{
         
@@ -21,24 +21,39 @@ function verifica (lista, tipoIns){
 
     } while(validazione);
     
-    return lista, numero;
+    return lista;
 }
 
 // genero x num casuali univoci
 
-var listaCasuali = [];
-var difficolta = 10;
-    
 
-for ( var i = 0; i<10; i++) {
+// var difficolta = parseInt(prompt("0 facile 1 medio 2 difficile"));
+
+// if (difficolta == 0){
+//     var maxi = 100;
+//     var mini = 1;
+// }
+// else if (difficolta == 1){
+//     var maxi = 80;
+//     var mini = 1;
+// }
+// else if (difficolta == 2){
+//     var maxi = 50;
+//     var mini = 1;
+// }
+
+var listaCasuali = [];
+
+for ( var i = 0; i<16; i++) {
     verifica(listaCasuali, "random" );
 }
 
 console.log(listaCasuali);
 
+//     // SEZIONE PER CREAZIONE LISTA DI NUMERI CASUALI SENZA UTILIZZO DI FUNZIONE
 // var numero = Math.floor(Math.random() * 100) + 1;
 
-//     // SEZIONE PER CREAZIONE LISTA DI NUMERI CASUALI SENZA UTILIZZO DI FUNZIONE
+
 //     if ( listaCasuali.includes(numero) ){
 //             do{
 //                 numero = Math.floor(Math.random() * 100) + 1;
@@ -67,7 +82,6 @@ while ( j < tentativi && sconfitta == false ){
     }
 
     j++;
-    console.log(j);
 }
 
 console.log(numSceltoLista);
@@ -80,7 +94,7 @@ else{
 }
 
 
-
+//     // SEZIONE PER INSERIMENTO NUMERI UTENTE SENZA UTILIZZO DI FUNZIONE
 // numScelto = parseInt(prompt("inserisci un numero"));
 //     // controllo non ci siano duplicati
 //     if ( numSceltoLista.includes(numScelto) ){
