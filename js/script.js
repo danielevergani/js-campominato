@@ -1,74 +1,100 @@
+function verifica (lista, tipoIns){
+
+    var numero;
+    var validazione; 
+
+    do{
+        
+        if (tipoIns == "random"){
+            numero = Math.floor(Math.random() * 100) + 1;
+        }
+        else if (tipoIns == "prompt"){
+            numero = parseInt(prompt("inserisci un numero"));
+        }
+
+        if (lista.includes(numero)){
+            validazione = true
+        }
+        else {
+            lista.push(numero)
+        }
+
+    } while(validazione);
+    
+    return lista, numero;
+}
+
 // genero x num casuali univoci
 
 var listaCasuali = [];
 var difficolta = 10;
-
-for ( var i = 0; i<difficolta; i++) {
     
-    var numero = Math.floor(Math.random() * 100) + 1;
-    verificaPresenza(listaCasuali, numero)
 
+for ( var i = 0; i<10; i++) {
+    verifica(listaCasuali, "random" );
 }
 
 console.log(listaCasuali);
+
+// var numero = Math.floor(Math.random() * 100) + 1;
+
+//     // SEZIONE PER CREAZIONE LISTA DI NUMERI CASUALI SENZA UTILIZZO DI FUNZIONE
+//     if ( listaCasuali.includes(numero) ){
+//             do{
+//                 numero = Math.floor(Math.random() * 100) + 1;
+//             } while (listaCasuali.includes(numero));
+//             listaCasuali.push(numero)
+//         }
+//     else {
+//         listaCasuali.push(numero)
+//     }
 
 // utente deve inserire x numeri diversi tra di loro
 
 var sconfitta = false;
 var numSceltoLista = [];
 var j = 0;
-var numScelto = 0;
-var contatore = 0;
+var numero;
 var tentativi = parseInt(prompt("quanti tentativi vuoi avere?"));
+alert("avrai " + tentativi + " tentativi");
 
 while ( j < tentativi && sconfitta == false ){
 
-    numScelto = parseInt(prompt("inserisci un numero"));
-    // controllo non ci siano duplicati
-    if ( numSceltoLista.includes(numScelto) ){
+    verifica(numSceltoLista, "prompt" );
 
-        do{
-            numScelto = parseInt(prompt("inserisci un numero"));
-        } while ( numSceltoLista.includes(numScelto) );
-        
-        numSceltoLista.push(numScelto)
-        console.log(numSceltoLista)
-    }
-    else {
-        numSceltoLista.push(numScelto)
-        console.log(numSceltoLista)
-    }
-
-    if ( listaCasuali.includes(numScelto)){
+    if ( listaCasuali.includes(numSceltoLista[j]) ){
         sconfitta = true
-        contatore = j + 1
     }
 
     j++;
     console.log(j);
 }
 
-alert("BOOM!! hai perso al " + contatore + " tentativo");
+console.log(numSceltoLista);
 
-function verificaPresenza(array, num){
-    if ( array.includes(num) ){
-        do{
-            num = Math.floor(Math.random() * 100) + 1;
-        } while (array.includes(num));
-        array.push(num)
-    }
-    else {
-        array.push(num)
-    }
+if (j == tentativi){
+    alert("hai vinto")
+}
+else{
+    alert("BOOM!! hai perso al " + j + " tentativo");   
 }
 
-// SEZIONE PER CREAZIONE LISTA DI NUMERI CASUALI SENZA UTILIZZO DI FUNZIONE
-// if ( listaCasuali.includes(numero) ){
-    //     do{
-    //         numero = Math.floor(Math.random() * 5) + 1;
-    //     } while (listaCasuali.includes(numero));
-    //     listaCasuali.push(numero)
-    // }
-    // else {
-    //     listaCasuali.push(numero)
-    // }
+
+
+// numScelto = parseInt(prompt("inserisci un numero"));
+//     // controllo non ci siano duplicati
+//     if ( numSceltoLista.includes(numScelto) ){
+
+//         do{
+//             numScelto = parseInt(prompt("inserisci un numero"));
+//         } while ( numSceltoLista.includes(numScelto) );
+        
+//         numSceltoLista.push(numScelto)
+//         console.log(numSceltoLista)
+//     }
+//     else {
+//         numSceltoLista.push(numScelto)
+//         console.log(numSceltoLista)
+//     }
+
+
