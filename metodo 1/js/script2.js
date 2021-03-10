@@ -4,7 +4,7 @@ var listaCasuali = [];
 var numero;
 while ( listaCasuali.length < 16 ){
 
-    numero = verifica ("random");
+    numero = inserimento ("random");
     if ( listaCasuali.includes(numero) == false ){
         listaCasuali.push(numero)
     }
@@ -14,7 +14,7 @@ while ( listaCasuali.length < 16 ){
 console.log(listaCasuali);
 
 
-function verifica (tipoIns){
+function inserimento (tipoIns){
 
     var numero;
  
@@ -38,7 +38,7 @@ alert("avrai " + tentativi + " tentativi");
 
 while ( numSceltoLista.length < tentativi && sconfitta == false ){
 
-    numeroIns = verifica("prompt");
+    numeroIns = inserimento("prompt");
 
     if ( listaCasuali.includes(numeroIns) ){
         sconfitta = true
