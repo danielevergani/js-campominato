@@ -4,23 +4,26 @@
 // 2 - mum 1 -50
 
 do{
-    var difficoltà = parseInt(prompt("seleziona la difficoltà 0 = facile 1= medio 2=difficile")); 
-} while ( difficoltà != 0 && difficoltà != 1 & difficoltà != 2 );
+    var difficolta = parseInt(prompt("seleziona la difficoltà 0 = facile 1= medio 2=difficile")); 
+} while ( difficolta != 0 && difficolta != 1 & difficolta != 2 );
 
-switch (difficoltà) {
+var maxNum;
+var minNum; 
+
+switch (difficolta) {
     case 1:
-       var maxNum = 80;
-       var minNum = 1; 
+        maxNum = 80;
+        minNum = 1; 
     break;
 
     case 2:
-       var maxNum = 50;
-       var minNum = 1; 
+        maxNum = 50;
+        minNum = 1; 
     break;
 
     default:
-        var maxNum = 100;
-        var minNum = 1; 
+        maxNum = 100;
+        minNum = 1; 
     break;
 }
 
@@ -48,7 +51,6 @@ function numRandomGen (min, max) {
 
 // inserimento di numeri da utente x maxNum - 16 volte
 
-var i = 0;
 var listaTentativi = [];
 var sconfitta = false;
 
