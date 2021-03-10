@@ -25,6 +25,8 @@ function verifica (lista, tipoIns){
     return lista;
 }
 
+
+
 // end sez funzioni
 
 var listaCasuali = [];
