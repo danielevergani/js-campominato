@@ -31,19 +31,9 @@ function verifica (lista, tipoIns){
 
 var listaCasuali = [];
 
-for ( var i = 0; i<16; i++) {
+while ( listaCasuali.length < 16 ){
 
-    var numero = Math.floor(Math.random() * 100) + 1;
-
-    if ( listaCasuali.includes(numero) ){
-            do{
-                numero = Math.floor(Math.random() * 100) + 1;
-            } while (listaCasuali.includes(numero));
-            listaCasuali.push(numero)
-        }
-    else {
-        listaCasuali.push(numero)
-    }
+    verifica (listaCasuali, "random")
 
 }
 
