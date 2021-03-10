@@ -1,3 +1,4 @@
+// sez funzioni
 function verifica (lista, tipoIns){
 
     var numero;
@@ -24,45 +25,28 @@ function verifica (lista, tipoIns){
     return lista;
 }
 
-// genero x num casuali univoci
-
-
-// var difficolta = parseInt(prompt("0 facile 1 medio 2 difficile"));
-
-// if (difficolta == 0){
-//     var maxi = 100;
-//     var mini = 1;
-// }
-// else if (difficolta == 1){
-//     var maxi = 80;
-//     var mini = 1;
-// }
-// else if (difficolta == 2){
-//     var maxi = 50;
-//     var mini = 1;
-// }
+// end sez funzioni
 
 var listaCasuali = [];
 
 for ( var i = 0; i<16; i++) {
-    verifica(listaCasuali, "random" );
+
+    var numero = Math.floor(Math.random() * 100) + 1;
+
+    if ( listaCasuali.includes(numero) ){
+            do{
+                numero = Math.floor(Math.random() * 100) + 1;
+            } while (listaCasuali.includes(numero));
+            listaCasuali.push(numero)
+        }
+    else {
+        listaCasuali.push(numero)
+    }
+
 }
 
 console.log(listaCasuali);
 
-//     // SEZIONE PER CREAZIONE LISTA DI NUMERI CASUALI SENZA UTILIZZO DI FUNZIONE
-// var numero = Math.floor(Math.random() * 100) + 1;
-
-
-//     if ( listaCasuali.includes(numero) ){
-//             do{
-//                 numero = Math.floor(Math.random() * 100) + 1;
-//             } while (listaCasuali.includes(numero));
-//             listaCasuali.push(numero)
-//         }
-//     else {
-//         listaCasuali.push(numero)
-//     }
 
 // utente deve inserire x numeri diversi tra di loro
 
@@ -70,6 +54,7 @@ var sconfitta = false;
 var numSceltoLista = [];
 var j = 0;
 var numero;
+
 var tentativi = parseInt(prompt("quanti tentativi vuoi avere?"));
 alert("avrai " + tentativi + " tentativi");
 
